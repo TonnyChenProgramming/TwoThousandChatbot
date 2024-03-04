@@ -1,0 +1,37 @@
+https://twothousand.feishu.cn/docx/IGxWdJv1xoMe2SxLRLAcuV31nsc?from=from_copylink
+我大概写了下背景和流程，欢迎补充. 感觉你可以先学下怎么做数据抓取, 怎么视频转文字等等。然后可以试试几个造个性化Chatbot的平台，比如https://customgpt.ai/  (我也是随便搜找到的，不一定好用。你可以多试几家，看哪个靠谱/便宜)
+
+
+Problem Statement
+阿里巴巴是双千的主要客户来源之一，超过30%的订单来自该平台。然而，阿里巴巴上存在各种客户，其中包括:
+- 购买意向低但不断纠缠的客户
+- 需要持续指导但最终未成交或少成交的新手买家
+- 欺诈/骚扰的不良分子
+由于阿里巴巴的“回复率”考核机制，我们必须迅速回应客户的消息，以保持良好的品牌形象。然而，这也导致我们的业务员花费大量时间处理低质量客户，这不仅产出不成比例，还妨碍了业务员与重要客户的合作.
+(具体低质客户的例子, 等假期过完、大家上班后提供)
+Solution Proposal
+搭建一个自动回复系统，实现以下功能:
+- 自动回复业务员超过1小时未应答的问题, 保证阿里回复率指标
+- 具备能解决简单客户诉求的能力 (比如推荐客户去看某个双千的文章或Youtube视频了解详情)，而不是一直死板地回复"我们稍后答复您"
+Instructions
+该自动回复系统主要由两部分组成:
+- PART 1. 基于ChatGPT、拥有双千产品知识的聊天机器人
+  - Data Source (a.k.a. Knowledge Base)
+    - Website data - twothousand.com, memixers.com, grand-chill.com, doughpressmachine.com, commercialwafflemaker.com
+    - YouTube videos (and description/comment) - https://www.youtube.com/@TwothousandMachineryChina
+      - 注: 需要把视频转文字，这样ChatGPT才能理解
+    - Facebook posts: https://www.facebook.com/twothousandmachinerychina/
+    - (待讨论) 邮箱数据 - 涉及敏感信息
+    - (待讨论) 富通ERP数据 - 高度敏感信息
+  - Data Scraping
+    - https://www.udemy.com/course/100-days-of-code/ (Day 41-53)
+    - YouTube/Facebook数据抓取可能会被封IP, 建议了解一下代理池 (proxy pool)
+  - Customized Chatbot Training
+    - 途径一: 第三方平台. 比如 - https://customgpt.ai/    https://insertchatgpt.com/
+    - 途径二: Build from Scratch. 网上有很多相关资料，可以去研究下
+  - Chatbot API Serving
+    - TBD. 到这步我们再讨论
+
+- PART 2. 阿里整合 - 在阿里调用聊天机器人API, 并提供简单UI供业务员控制机器人行为
+  - 需要双千阿里账号才能了解详情。等他们国庆回来后再计划
+  - 阿里没有开放API接口, 但可以通过模拟登录调用机器人

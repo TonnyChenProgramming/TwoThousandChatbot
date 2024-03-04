@@ -1,0 +1,14 @@
+train an AI Chatbot
+
+1. Gather information 
+--> scrap web page text
+    webscrap html --> clean it to pure text --> append it to a text file
+--> convert Youtube video to text
+
+
+2. Feed information 
+--> Go to the website, maintain user login, feed information 
+
+
+3.train AI
+--> TBD
