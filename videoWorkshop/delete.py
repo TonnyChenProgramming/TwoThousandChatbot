@@ -1,4 +1,5 @@
 def delete(file_path):
+    #this function delet a file
     import os
     try:
         os.remove(file_path)

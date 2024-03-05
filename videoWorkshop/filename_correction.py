@@ -1,4 +1,5 @@
 def filename_correction(input_filename):
+    #this function correct illegal filename
     output_filename = ''
     illegal_characters = ['#','%','&','{','}','\\','<','?','*','?','/','$','!',':','+','|','=']
     for character in input_filename:

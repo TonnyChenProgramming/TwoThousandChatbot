@@ -9,11 +9,14 @@ kitchen_equitment = {}
 
 
 def scrap_twothousand():
+    #THE text data is in python dictionary format
+    #This function retrieve data from a text file and modify it and store it back
+    # FindkeylinkForTwoThousand and scrap_machine_item_info scrap the target web page and parse the wanted data and store it in the dictionary
     
-    #FindKeyLinkForTwoThousand(dict = kitchen_equitment)
     with open('data.txt') as f: 
         data = f.read() 
     dict = json.loads(data)
+    FindKeyLinkForTwoThousand(dict)
     scrap_machine_item_info(dict=dict)
     with open('data.txt','w') as f:
         f.write(json.dumps(dict))

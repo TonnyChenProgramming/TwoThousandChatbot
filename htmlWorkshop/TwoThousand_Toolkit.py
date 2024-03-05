@@ -2,6 +2,8 @@ from Scrap_html import scrap_one_page
 import re
 from bs4 import BeautifulSoup
 def FindKeyLinkForTwoThousand(dict):
+    #TwoThousand Machinery company's products can be divided in these categories stated in the keywords variable.
+    #This function will go over each of the categories and store the machine name and machine url(subpage) in to the dictionary
     keywords = ['food-preparation','refrigeration-equipment','baking-equipment','cooking-equipment','stainless-steel-equipment','industry-and-food-service-equipments',]
     #for item in keywords:
     for item in keywords:
@@ -59,6 +61,7 @@ def parse_items(text):
                 }
     return items
 def parse_item_data(text):
+    #this function parse model html string
     try:
         soup = BeautifulSoup(text,'lxml')
     except:
@@ -80,8 +83,11 @@ def parse_item_data(text):
         data += ' '+piece.td.string+' '
     return data
 def scrap_machine_item_info(dict):
+    # a product have many models, for example, a green color mixer and a blue color mixer.
+    #This function will scrape and pass the key information for each model listed on the company wesbite
+    #The dict is being updated 
+    
 
-    #scrap description
     #for machine in dict:
         #text =scrap_one_page(url=dict[machine]['url']) 
         #dict[machine]['description'] = parse_description(text=text)
